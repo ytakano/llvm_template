@@ -1,0 +1,13 @@
+version: '3'
+services:
+  llvm_template:
+    build: .
+    volumes:
+      - "../:/hostos"
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    stdin_open: true
+    tty: true
+    working_dir: "/hostos"
